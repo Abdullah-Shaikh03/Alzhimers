@@ -141,7 +141,7 @@ def visualize_reconstructions(model, dataloader, output_dir, config, sample_size
 
     # Convert to numpy for visualization
     samples = samples.cpu().numpy()
-    recon_samples = recon_samples.cpu().numpy()
+    recon_samples = recon_samples.detach().cpu().numpy()
 
     # Denormalize images from [-1, 1] to [0, 1]
     samples = (samples + 1) / 2
@@ -290,7 +290,7 @@ def generate_grad_cam(model, dataloader, output_dir, config, sample_size=5):
 
     # Create GradCAM
     grad_cam = GradCAM(
-        model=model, target_layers=[target_layer], use_cuda=device.type == "cuda"
+        model=model, target_layers=[target_layer]
     )
 
     # Get samples
