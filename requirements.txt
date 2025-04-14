@@ -1,0 +1,15 @@
+torch
+torchvision
+nibabel
+scikit-learn
+matplotlib
+seaborn
+pandas
+numpy
+PyYAML
+tqdm
+tensorboard
+pytorch-gradcam
+opencv-python
+pillow
+pathlib
